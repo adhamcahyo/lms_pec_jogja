@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="discussion-list">
+  <h2>Discussion List</h2>
+  <ul>
+    {% for discussion in discussions %}
+      <li><a href="{% url 'discussion_detail' discussion.id %}">{{ discussion.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>List of Courses</h2>
+    <ul>
+      {% for course in courses %}
+        <li>
+          <div>
+            <h3><a href="{% url 'course_detail' course.id %}">{{ course.title }}</a></h3>
+            <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+            <p><strong>Duration:</strong> {{ course.duration }}</p>
+            <p><strong>Price:</strong> ${{ course.price }}</p>
+            <p><strong>Description:</strong> {{ course.description }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_course' %}" class="btn btn-primary">Create New Course</a>
+  </div>
+{% endblock %}

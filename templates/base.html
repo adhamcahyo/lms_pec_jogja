@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LMS Pec-Jogja</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>LMS Pec-Jogja</h1>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'course_list' %}">Courses</a></li>
+        <li><a href="{% url 'quiz_list' %}">Quizzes</a></li>
+        <li><a href="{% url 'discussion_list' %}">Discussions</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; {{ year }} LMS Pec-Jogja. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

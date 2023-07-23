@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-content">
+  <h2>Welcome, {{ user.username }}!</h2>
+  <p>
+    You are currently logged in as an admin. Here, you have full access to the system.
+    You can manage all courses, quizzes, and discussions. You can also manage user accounts,
+    handle student enrollments, and view system-wide analytics.
+  </p>
+  <p>
+    Feel free to monitor and maintain the system, and ensure everything is running smoothly.
+    If you have any questions or need assistance, feel free to contact the support team.
+  </p>
+  <!-- Add more content specific to admin dashboard -->
+</div>
+{% endblock %}

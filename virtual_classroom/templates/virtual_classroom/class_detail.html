@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="class-detail">
+  <h2>{{ classroom.title }}</h2>
+  <p>{{ classroom.description }}</p>
+  <p>Instructor: {{ classroom.instructor.username }}</p>
+  <p>Start Date: {{ classroom.start_date }}</p>
+  <p>End Date: {{ classroom.end_date }}</p>
+</div>
+{% endblock %}

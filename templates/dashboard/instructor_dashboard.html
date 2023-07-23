@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-content">
+  <h2>Welcome, {{ user.username }}!</h2>
+  <p>
+    You are currently logged in as an instructor. Here, you can manage your courses,
+    create quizzes, grade assignments, and interact with your students through discussions.
+  </p>
+  <p>
+    Feel free to check the course analytics to track your students' progress and performance.
+    If you have any questions, you can contact the admin for support.
+  </p>
+  <!-- Add more content specific to instructor dashboard -->
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="discussion-detail">
+  <h2>{{ discussion.title }}</h2>
+  <p>{{ discussion.content }}</p>
+  <p>Created By: {{ discussion.user.username }}</p>
+  <p>Created At: {{ discussion.created_at }}</p>
+</div>
+{% endblock %}
