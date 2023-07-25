@@ -1,0 +1,7 @@
+poetry.lock
+**/*/__pycache__
+
+.env
+.env.local
+.env.development
+.env.production
