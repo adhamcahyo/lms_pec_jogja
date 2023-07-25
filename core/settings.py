@@ -3,11 +3,11 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-_wl+b3*h*adizuo_v64ozx(#h2e7smg*yx07f^a)!h5g#luzqm'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = True
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 INSTALLED_APPS = [
 
@@ -58,12 +58,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
         'default': {
-            'ENGINE': os.environ.get('ENGINE'),
-            'NAME': os.environ.get('NAME'),
-            'USER': os.environ.get('USER'),
-            'PASSWORD': os.environ.get('PASSWORD'),
-            'HOST': os.environ.get('HOST'),
-            'PORT': os.environ.get('PORT'),
+            'ENGINE': os.environ.get('ENGINE', "django.db.backends.sqlite3"),
+            'NAME': os.environ.get('NAME', os.path.join(BASE_DIR, 'db.sqlite3')),
+            'USER': os.environ.get('USER', 'sqlite'),
+            'PASSWORD': os.environ.get('PASSWORD', 'sqlite'),
+            'HOST': os.environ.get('HOST', 'db'),
+            'PORT': os.environ.get('PORT', '3306'),
             }
         }
 
