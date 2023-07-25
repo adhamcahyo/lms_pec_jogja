@@ -23,4 +23,4 @@ COPY . /code
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "lms_pec_jogja.wsgi"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "core.wsgi"]

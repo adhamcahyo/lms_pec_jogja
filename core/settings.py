@@ -36,7 +36,7 @@ MIDDLEWARE = [
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
         ]
 
-ROOT_URLCONF = 'lms_pec_jogja.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
         {
@@ -54,7 +54,7 @@ TEMPLATES = [
             },
         ]
 
-WSGI_APPLICATION = 'lms_pec_jogja.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
         'default': {
